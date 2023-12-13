@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+        {{product.description|truncatewords:155}}
+        Welcome to The Cart & Co. Where everything is a touch away!
+{% endblock %}
+{% block title %}
+    {% if product %}
+        {{product.name}}-The Cart & Co.
+    {% endif %}
+{% endblock %}
+{% block content %}
+<div class="row my_product-row">
+    <div class="mx_auto">
+        <p> <a href="{% url 'ecommerceapp:allcategories' %}">Home</a> | <a href="{{product.category.get_url}}">{{product.category}}</a> | {{product.name}}</p>
+    </div>
+</div>
+<div class="container">
+    <br><center>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12">
+            <div style="min-width:18rem">
+                <img class="my_image_padding" src="{{product.image.url}}" alt="{{product.name}}">
+            </div>
+        </div>
+            <div class="col-12 col-sm-12 col-lg-12">
+                <div>
+                    <h1 class="my_product_title">{{product.name}}</h1>
+                    <p>${{product.price}}</p>
+                    <p class="my_about_title">About the product</p>
+                    <p class="text-justify my_desc">{{product.description}}</p>
+                    {% if product.stock <= 0 %}
+                    <p class="text-justify" style="color:#d85c24">OUT OF STOCK</p>
+                    {% else %}
+                </div>
+            <a class="btn btn-secondary" href="{% url 'cart:add_cart' product.id %}">Add to cart</a>
+            {% endif %}
+        </div></center>
+    </div>
+{% endblock %}

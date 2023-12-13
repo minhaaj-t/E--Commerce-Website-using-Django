@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+        {{category.description|truncatewords:155}}
+    {% else %}
+        Welcome to The Cart & Co. Where everything is a touch away!
+    {% endif %}
+{% endblock %}
+{% block title %}
+    {% if category %}
+        {{category.name}}-The Cart & Co.
+    {% else %}
+       Make your cart Rn
+    {% endif %}
+{% endblock %}
+{% block content %}
+    {% if category %}
+<div class="container">
+    <div xmlns="http://www.w3.org/1999/html">
+                <div>
+                    <div class="row my_row">
+                        <div class="mx_auto">
+                            <p>
+                                <a href="{% url  'ecommerceapp:allcategories' %}">Our Collection</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    </div>
+        {% endif %}
+    <div class="mx_auto">
+            {% if category %}
+            <div>
+                    <center><img class="my_image" src="{{category.image.url}}" alt="{{category.name}}" width="1250px" height="700px"></center>
+            </div>
+    </div>
+    <br>
+    <div>
+        <h1 class="text-center my_title">{{category.name}}</h1>
+        <p class="text-justify">{{category.description}}</p>
+    </div>
+        {% else %}
+            <div>
+               <center><img class="my_image my_image_padding" src="{% static 'img/banner.jpg' %}" alt="Our Products" width="1300" height="700"></center>
+            </div>
+            <br>
+            <div>
+                <h1 class="text-center my_title">Our Collection</h1>
+                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type book. It has survived not five centuries, also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+        {% endif %}<center>
+<div>
+    <div class="row mx-auto">
+        {% for product in products.object_list %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-3 xol-lg-3">
+            <div class="text-center" style="min-width:18rem;">
+                <div class="col-md-12">
+                <a href="{{product.get_url}}"><img class="card-img-top my_img" src="{{product.image.url}}" alt="{{product.name}}"width="1000" height="300"> </a>
+                </div>
+                <div class="card body">
+                    <h4>{{product.name}}</h4>
+                    <h3>{{product.price}}</h3>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mx_auto">
+        {% if products.paginator.num_pages > 1 %}
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %}active{% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    <br>
+</div></center>
+    </div>
+{% endblock %}
+
+

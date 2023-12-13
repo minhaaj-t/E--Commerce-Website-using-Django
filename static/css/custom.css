@@ -1,0 +1,172 @@
+/** Body **/
+body
+{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing : .2em;
+    font-size : 15px;
+}
+
+/** Navbar **/
+.nav-item
+{
+    letter-spacing : .2em;
+    font-size : 15px;
+    text-transform:uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/** Dropdown **/
+.dropdown-item
+{
+    letter-spacing : .2em;
+    font-size : 12px;
+    text-transform :uppercase;
+    font-family : 'Montserrat', sans-serif;
+}
+
+/** Footer **/
+.my_footer
+{
+    background-color: #e6e5e4;
+    height:60px;
+    font-family : 'Montserrat', sans-serif;
+    letter-spacing : .2em;
+}
+
+.my_footer p
+{
+    padding-top:20px;
+    font-size:12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing : .2em;
+}
+
+/** Category **/
+.my_row
+{
+    padding-top:20px;
+    font-size:12px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.my_row .mx_auto
+{
+   color:#e08d39;
+   font-size:12px;
+
+}
+
+.my_image
+{
+    width:100%;
+    height:auto;
+
+}
+
+.my_title
+{
+    font-size:20px;
+    color:#e3c37b;
+    text-transform :uppercase;
+    letter-spacing : .2em;
+}
+
+.my_image_padding
+{
+    padding:5px;
+}
+
+.my_bottom_margin
+{
+    margin-bottom:10px;
+}
+
+.card-body h4
+{
+    font-size:20px;
+    color:#e3c37b;
+    text-transform :uppercase;
+    letter-spacing : .2em;
+}
+
+
+/** Product **/
+
+.my_product-row
+{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.my_product-row .mx_auto
+{
+    font-size:20px;
+    color:#e3c37b;
+    text-transform :uppercase;
+    letter-spacing : .2em;
+}
+
+.my_product_title
+{
+    font-size:20px;
+    color:#e6b340;
+    text-transform :uppercase;
+    letter-spacing : .2em;
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.my_desc
+{
+
+    color:#7d6d48;
+
+    letter-spacing : .2em;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-right:15px;
+    padding-left:15px;
+}
+
+.my_about_title
+{
+    text-transform :uppercase;
+    letter-spacing : .2em;
+    color:#6e5210;
+    font-size:16px;
+}
+
+/** Search **/
+.my_search
+{
+    padding-top:20px;
+}
+
+/** Cart **/
+.my_cart_table
+{
+    min-width:400px;
+    font-size:14px;
+}
+.my_thead
+{
+    font-weight:normal;
+    text-transform :uppercase;
+    letter-spacing : .2em;
+    background-color:#6e5210;
+    font-size:16px;
+}
+.custom_a
+{
+    text-decoration:none;
+}
+.custom_icon
+{
+    text-decoration:none ;
+    color:#675147 !important;
+}
+.my_custom_button
+{
+    margin-top:5px;
+
+}
